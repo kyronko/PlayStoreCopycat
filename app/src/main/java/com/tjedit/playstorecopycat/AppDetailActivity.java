@@ -45,7 +45,7 @@ public class AppDetailActivity extends AppCompatActivity {
     act.dialBtn.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Uri phoneusri = Uri.parse("tel : 019-9876-5432");
+            Uri phoneusri = Uri.parse("tel:019-9876-5432");
             Intent intent = new Intent(Intent.ACTION_DIAL,phoneusri);
             startActivity(intent);
         }
