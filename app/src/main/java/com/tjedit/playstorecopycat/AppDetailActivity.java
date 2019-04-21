@@ -14,5 +14,7 @@ public class AppDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         act = DataBindingUtil.setContentView(this,R.layout.activity_app_detail);
+
+
     }
 }
