@@ -33,6 +33,8 @@ public class AppAdapter extends ArrayAdapter<App> {
              row = inf.inflate(R.layout.app_list_item,null);
 
          }
+
+
          return row;
 
     }
