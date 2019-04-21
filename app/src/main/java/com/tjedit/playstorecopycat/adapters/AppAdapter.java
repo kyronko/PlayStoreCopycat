@@ -44,7 +44,7 @@ public class AppAdapter extends ArrayAdapter<App> {
 
         if(appData.isMine ){
 
-
+            priceOrInstalledTxt.setText("설치된 항목");
         }
         else{
             priceOrInstalledTxt.setText(String.format("%,d원",appData.price));

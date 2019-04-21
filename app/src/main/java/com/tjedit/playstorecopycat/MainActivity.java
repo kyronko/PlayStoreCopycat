@@ -35,5 +35,6 @@ public class MainActivity extends AppCompatActivity {
         appList.add(new App(4, "팔라독", "FrazeCat", 3, 6000, true));
         appList.add(new App(5, "Planet Vs Zombies", "EA swiss sarl", 5, 6000, false));
         appList.add(new App(6, "스왐피", "Disney", 1, 6000, false));
+
     }
 }
