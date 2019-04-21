@@ -1,10 +1,12 @@
 package com.tjedit.playstorecopycat.datas;
 
-public class App {
+import java.io.Serializable;
+
+public class App implements Serializable {
     public  int rank;
     public String title;
     public  String companyName;
-    public int userRaing;
+    public int userRating;
     public int price;
     public boolean isMine;
 
@@ -12,7 +14,7 @@ public class App {
         this.rank = rank;
         this.title = title;
         this.companyName = companyName;
-        this.userRaing = userRaing;
+        this.userRating = userRaing;
         this.price = price;
         this.isMine = isMine;
     }

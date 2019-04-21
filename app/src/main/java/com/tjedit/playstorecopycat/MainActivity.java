@@ -47,8 +47,9 @@ public class MainActivity extends AppCompatActivity {
             App clickedAppData = appList.get(position);
 //  Toast.makeText(MainActivity.this, String.format("%d번 줄 클릭", position), Toast.LENGTH_SHORT).show();
               Intent intent = new Intent(MainActivity.this,AppDetailActivity.class);
-              intent.putExtra("제목", clickedAppData.title);
-              intent.putExtra("회사이름",clickedAppData.companyName);
+//              intent.putExtra("제목", clickedAppData.title);
+//              intent.putExtra("회사이름",clickedAppData.companyName);
+              intent.putExtra("앱정보",clickedAppData);
               startActivity(intent);
           }
       });
@@ -67,8 +68,8 @@ public class MainActivity extends AppCompatActivity {
         appList.add(new App(2, "MineCraft", "Mojang", 4, 6000, true));
         appList.add(new App(3, "아스팔트 7  : 하트", "GameLoft", 2, 6000, false));
         appList.add(new App(4, "팔라독", "FrazeCat", 3, 6000, true));
-        appList.add(new App(5, "Planet Vs Zombies", "EA swiss sarl", 5, 6000, false));
-        appList.add(new App(6, "스왐피", "Disney", 1, 6000, false));
+        appList.add(new App(5, "Planet Vs Zombies", "EA swiss sarl", 5, 2000, false));
+        appList.add(new App(6, "스왐피", "Disney", 1, 1200, false));
 
     }
 }
