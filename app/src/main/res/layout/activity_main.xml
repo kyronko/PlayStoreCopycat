@@ -15,11 +15,16 @@
             android:textSize="16sp"
             android:gravity="center"
             android:text="플레이스토어 게임 순위"/>
+        <Button
+            android:id="@+id/okBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="확인"/>
         <ListView
             android:id="@+id/appRankListView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            
+
         </ListView>
 
     </LinearLayout>
