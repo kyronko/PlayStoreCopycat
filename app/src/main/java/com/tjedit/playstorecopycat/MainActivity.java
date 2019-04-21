@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
         act = DataBindingUtil.setContentView(this,R.layout.activity_main);
         act.titleTxt.setText("제목 화면");
 
+        fillApps();
+
+
     }
     void fillApps(){
         appList.add(new App(1, "아스팔트 8 :에어본","GameLoft", 5,6000,true));
