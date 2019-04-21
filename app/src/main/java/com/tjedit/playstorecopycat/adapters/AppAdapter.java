@@ -39,7 +39,16 @@ public class AppAdapter extends ArrayAdapter<App> {
         TextView companyNameTxt = row.findViewById(R.id.companyNameTxt);
         TextView priceOrInstalledTxt = row.findViewById(R.id.priceOrInstalledTxt);
 
+        rankAndTitleTxt.setText(String.format("%d. %s",appData.rank,appData.title));
+        companyNameTxt.setText(appData.companyName);
 
+        if(appData.isMine ){
+
+
+        }
+        else{
+            priceOrInstalledTxt.setText(String.format("%,d원",appData.price));
+        }
          return row;
 
     }
