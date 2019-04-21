@@ -31,36 +31,41 @@ public class MainActivity extends AppCompatActivity {
 
         fillApps();
 
-        mAppAdapter = new AppAdapter(MainActivity.this,appList);
+        mAppAdapter = new AppAdapter(MainActivity.this, appList);
         act.appRankListView.setAdapter(mAppAdapter);
 
-      act.okBtn.setOnClickListener(new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-              Toast.makeText(MainActivity.this, "확인버튼을 눌렀습니다.", Toast.LENGTH_SHORT).show();
-          }
-      });
+        act.okBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(MainActivity.this, "확인버튼을 눌렀습니다.", Toast.LENGTH_SHORT).show();
+                appList.add(new App(10,"임시 게임", "앙모장",1,4222, true));
+                mAppAdapter.notifyDataSetChanged();
 
-      act.appRankListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-          @Override
-          public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            App clickedAppData = appList.get(position);
+                act.appRankListView.smoothScrollToPosition(appList.size()-1);
+            }
+        });
+
+        act.appRankListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                App clickedAppData = appList.get(position);
 //  Toast.makeText(MainActivity.this, String.format("%d번 줄 클릭", position), Toast.LENGTH_SHORT).show();
-              Intent intent = new Intent(MainActivity.this,AppDetailActivity.class);
+                Intent intent = new Intent(MainActivity.this, AppDetailActivity.class);
 //              intent.putExtra("제목", clickedAppData.title);
 //              intent.putExtra("회사이름",clickedAppData.companyName);
-              intent.putExtra("앱정보",clickedAppData);
-              startActivity(intent);
-          }
-      });
-      act.appRankListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-          @Override
-          public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-              Toast.makeText(MainActivity.this,String.format("%d번 줄을 오래 누름",position), Toast.LENGTH_LONG).show();
-
-              return true;
-          }
-      });
+                intent.putExtra("앱정보", clickedAppData);
+                startActivity(intent);
+            }
+        });
+        act.appRankListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+//              Toast.makeText(MainActivity.this,String.format("%d번 줄을 오래 누름",position), Toast.LENGTH_LONG).show();
+                appList.remove(position);
+                mAppAdapter.notifyDataSetChanged();
+                return true;
+            }
+        });
     }
 
     void fillApps() {
